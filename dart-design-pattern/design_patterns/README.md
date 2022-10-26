@@ -1,11 +1,11 @@
 A sample command-line application with an entrypoint in `bin/`, library code
 in `lib/`, and example unit test in `test/`.
 
-#Single Responsibility
+# Single Responsibility
 Link[https://refactoring.guru/design-patterns/singleton]
 
 
-#Pros and Cons
+## Pros and Cons
 
 Pros
 
@@ -21,7 +21,7 @@ Pros
  - The pattern requires special treatment in a multithreaded environment so that multiple threads won’t create a singleton object several times.
  - It may be difficult to unit test the client code of the Singleton because many test frameworks rely on inheritance when producing mock objects. Since the constructor of the singleton class is private and overriding static methods is impossible in most languages, you will need to think of a creative way to mock the singleton. Or just don’t write the tests. Or don’t use the Singleton pattern.
 
- #Relations with Other Patterns
+ ## Relations with Other Patterns
 
 + A Facade class can often be transformed into a Singleton since a single facade object is sufficient in most cases.
 
