@@ -11,12 +11,14 @@ class Singleton {
   static Singleton? getSingleton() {
     if (_singleton == null) {
       //For multi-threaded apps not to reach at the same time. (Queue waits)
-      var lock = Lock();
-      //This is the practice of Lazy Loading
-      lock.synchronized(() {
-        _singleton = Singleton();
-        return _singleton;
-      });
+      if (_singleton == null) {
+        var lock = Lock();
+        //This is the practice of Lazy Loading
+        lock.synchronized(() {
+          _singleton = Singleton();
+          return _singleton;
+        });
+      }
     }
     return _singleton;
   }
