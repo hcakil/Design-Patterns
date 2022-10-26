@@ -1,7 +1,7 @@
 A sample command-line application with an entrypoint in `bin/`, library code
 in `lib/`, and example unit test in `test/`.
 
-# Single Responsibility
+# Singleton 
 Link[https://refactoring.guru/design-patterns/singleton]
 
 
@@ -30,3 +30,35 @@ Pros
 + There should be only one Singleton instance, whereas a Flyweight class can have multiple instances with different intrinsic states.
 The Singleton object can be mutable. Flyweight objects are immutable.
 Abstract Factories, Builders and Prototypes can all be implemented as Singletons.
+
+# Factory Method
+Link [https://refactoring.guru/design-patterns/factory-method]
+
+
+
+
+## Pros and Cons
+
+Pros
+
+ + You avoid tight coupling between the creator and the concrete products.
+ + Single Responsibility Principle. You can move the product creation code into one place in the program, making the code easier to support.
+ + Open/Closed Principle. You can introduce new types of products into the program without breaking existing client code.
+
+
+ Cons
+
++ The code may become more complicated since you need to introduce a lot of new subclasses to implement the pattern. The best case scenario is when you’re introducing the pattern into an existing hierarchy of creator classes.
+
+
+ ## Relations with Other Patterns
+
+- Many designs start by using Factory Method (less complicated and more customizable via subclasses) and evolve toward Abstract Factory, Prototype, or Builder (more flexible, but more complicated).
+
+- Abstract Factory classes are often based on a set of Factory Methods, but you can also use Prototype to compose the methods on these classes.
+
+- You can use Factory Method along with Iterator to let collection subclasses return different types of iterators that are compatible with the collections.
+
+- Prototype isn’t based on inheritance, so it doesn’t have its drawbacks. On the other hand, Prototype requires a complicated initialization of the cloned object. Factory Method is based on inheritance but doesn’t require an initialization step.
+
+- Factory Method is a specialization of Template Method. At the same time, a Factory Method may serve as a step in a large Template Method.
