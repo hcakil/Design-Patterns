@@ -6,6 +6,7 @@ class IPhoneFactory {
       String? model, String? battery, int? width, int height) {
     Phone? phone;
 
+//If classes getting bigger and bigger This makes harder to list them as a if else
     if (model!.contains("iphone5s")) {
       phone = Iphone5S(model, battery, width, height);
     } else if (model.contains("iphone14pro")) {

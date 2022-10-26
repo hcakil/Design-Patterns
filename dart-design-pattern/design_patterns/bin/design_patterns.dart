@@ -1,3 +1,6 @@
+import 'package:design_patterns/abstract_factory/iphone_14pro_factory.dart';
+import 'package:design_patterns/abstract_factory/iphone_5s_factory.dart';
+import 'package:design_patterns/abstract_factory/phone.dart' as phone2;
 import 'package:design_patterns/design_patterns.dart' as design_patterns;
 import 'package:design_patterns/factory/iphone_14pro.dart';
 import 'package:design_patterns/factory/iphone_5s.dart';
@@ -26,4 +29,24 @@ void main(List<String> arguments) {
 
   print("iphone14pro");
   print(iphone14pro.toString());
+
+  print("-------------");
+  //Abstract Factory
+
+  //In here because of methods are not static we need to create
+  // factories object
+  Iphone5sFactory iphone5sFactory = Iphone5sFactory();
+  Iphone14ProFactory iphone14proFactory = Iphone14ProFactory();
+
+  phone2.Phone? iphone5s2 =
+      iphone5sFactory.getPhone("iphone5s", "battery3", 1, 100);
+
+  phone2.Phone? iphone14pro2 =
+      iphone14proFactory.getPhone("iphone14pro", "battery4", 4, 200);
+
+  print("iphone5s");
+  print(iphone5s2.toString());
+
+  print("iphone14pro");
+  print(iphone14pro2.toString());
 }
