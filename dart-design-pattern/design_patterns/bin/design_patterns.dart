@@ -73,4 +73,15 @@ void main(List<String> arguments) {
 
   print("house 2");
   print(house2.toString());
+
+  //In prototype The main problem is cloning means the creating the new object again
+  //This is more time consuming and dependent variables get
+  //more complex the situation.
+  //Here We create an abstract shape class with color property
+  //Depend circle and rectangle with radius or height/width property
+  //named const. clone With super.clone property comes from shape
+  // then create objects with them again with the name of clone.
+  //send it object inside and then you can change its property
+  //via set methods.
+  //
 }
