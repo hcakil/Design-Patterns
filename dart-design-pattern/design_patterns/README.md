@@ -65,6 +65,9 @@ Pros
 
 
 # Abstract Factory
+Link [https://refactoring.guru/design-patterns/abstract-factory]
+
+
 
 ## Pros and Cons
 
@@ -95,5 +98,37 @@ Pros
 + Abstract Factory can serve as an alternative to Facade when you only want to hide the way the subsystem objects are created from the client code.
 
 + You can use Abstract Factory along with Bridge. This pairing is useful when some abstractions defined by Bridge can only work with specific implementations. In this case, Abstract Factory can encapsulate these relations and hide the complexity from the client code.
+
++ Abstract Factories, Builders and Prototypes can all be implemented as Singletons.
+
+
+# Builder
+Link [https://refactoring.guru/design-patterns/builder
+
+
+
+## Pros and Cons
+
+Pros 
+
+ + You can construct objects step-by-step, defer construction steps or run steps recursively.
+ + You can reuse the same construction code when building various representations of products.
+ + Single Responsibility Principle. You can isolate complex construction code from the business logic of the product.
+
+
+ Cons
+
+ + The overall complexity of the code increases since the pattern requires creating multiple new classes.
+
+
+## Relations with Other Patterns
+
++ Many designs start by using Factory Method (less complicated and more customizable via subclasses) and evolve toward Abstract Factory, Prototype, or Builder (more flexible, but more complicated).
+
++ Builder focuses on constructing complex objects step by step. Abstract Factory specializes in creating families of related objects. Abstract Factory returns the product immediately, whereas Builder lets you run some additional construction steps before fetching the product.
+
++ You can use Builder when creating complex Composite trees because you can program its construction steps to work recursively.
+
++ You can combine Builder with Bridge: the director class plays the role of the abstraction, while different builders act as implementations.
 
 + Abstract Factories, Builders and Prototypes can all be implemented as Singletons.

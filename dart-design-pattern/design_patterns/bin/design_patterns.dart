@@ -1,6 +1,7 @@
 import 'package:design_patterns/abstract_factory/iphone_14pro_factory.dart';
 import 'package:design_patterns/abstract_factory/iphone_5s_factory.dart';
 import 'package:design_patterns/abstract_factory/phone.dart' as phone2;
+import 'package:design_patterns/builder/house.dart';
 import 'package:design_patterns/design_patterns.dart' as design_patterns;
 import 'package:design_patterns/factory/iphone_14pro.dart';
 import 'package:design_patterns/factory/iphone_5s.dart';
@@ -49,4 +50,27 @@ void main(List<String> arguments) {
 
   print("iphone14pro");
   print(iphone14pro2.toString());
+
+//Builder
+
+//In this part we can create a House Builder and
+// then create a different named static functions
+//after that we can create .buildNewHouse .buildNewPoolAndFurnitureHouse
+// Dart gives us a named constructor and give some attributes
+//as a default value therefore this maybe can use in huge complex classes
+
+  House house1 = House.noSpecify();
+  house1.age = 100;
+  house1.city = "Ankara";
+  house1.county = "Mamak";
+  house1.hasAirConditioner = false;
+
+  House house2 = House("Ankara", "Mamak", "Güllüce", 10, 2, 2, 1, 4, false,
+      false, true, true, false, false);
+
+  print("house 1");
+  print(house1.toString());
+
+  print("house 2");
+  print(house2.toString());
 }
