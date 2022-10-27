@@ -1,12 +1,12 @@
-import 'package:design_patterns/factory/phone.dart';
+import 'package:design_patterns/creational_patterns/abstract_factory/phone.dart';
 
-class Iphone14Pro implements Phone {
+class Iphone5S implements Phone {
   String? _model;
   String? _battery;
   int? _width;
   int? _height;
 
-  Iphone14Pro(String? model, String? battery, int width, int height) {
+  Iphone5S(String? model, String? battery, int? width, int? height) {
     this._model = model;
     this._battery = battery;
     this._width = width;
@@ -39,6 +39,6 @@ class Iphone14Pro implements Phone {
 
   @override
   String toString() {
-    return 'Iphone14Pro(_model: $_model, _battery: $_battery, _width: $_width, _height: $_height)';
+    return 'Iphone5S(_model: $_model, _battery: $_battery, _width: $_width, _height: $_height)';
   }
 }

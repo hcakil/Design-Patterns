@@ -1,13 +1,17 @@
-import 'package:design_patterns/abstract_factory/iphone_14pro_factory.dart';
-import 'package:design_patterns/abstract_factory/iphone_5s_factory.dart';
-import 'package:design_patterns/abstract_factory/phone.dart' as phone2;
-import 'package:design_patterns/builder/house.dart';
+import 'package:design_patterns/creational_patterns/abstract_factory/iphone_14pro_factory.dart';
+import 'package:design_patterns/creational_patterns/abstract_factory/iphone_5s_factory.dart';
+import 'package:design_patterns/creational_patterns/abstract_factory/phone.dart'
+    as phone2;
+import 'package:design_patterns/creational_patterns/builder/house.dart';
 import 'package:design_patterns/design_patterns.dart' as design_patterns;
-import 'package:design_patterns/factory/iphone_14pro.dart';
-import 'package:design_patterns/factory/iphone_5s.dart';
-import 'package:design_patterns/factory/iphone_factory.dart';
-import 'package:design_patterns/factory/phone.dart';
-import 'package:design_patterns/signleton/singleton.dart';
+import 'package:design_patterns/creational_patterns/factory/iphone_14pro.dart';
+import 'package:design_patterns/creational_patterns/factory/iphone_5s.dart';
+import 'package:design_patterns/creational_patterns/factory/iphone_factory.dart';
+import 'package:design_patterns/creational_patterns/factory/phone.dart';
+import 'package:design_patterns/creational_patterns/signleton/singleton.dart';
+import 'package:design_patterns/structural/adapter/adapters.dart';
+import 'package:design_patterns/structural/adapter/iposts_api.dart';
+import 'package:design_patterns/structural/adapter/post.dart';
 
 void main(List<String> arguments) {
   // print('Hello world: ${design_patterns.calculate()}!');
@@ -83,5 +87,16 @@ void main(List<String> arguments) {
   // then create objects with them again with the name of clone.
   //send it object inside and then you can change its property
   //via set methods.
-  //
+  //SHALLOW COPY - DEEP COPY (Stores only reference )
+  //if change any attribute
+
+  print("--- Structural Design Pattern ---");
+
+//Adapter
+//Generic sample is xml - json parser
+
+  final IPostsAPI api1 = Site1Adapter();
+  final IPostsAPI api2 = Site2Adapter();
+
+  final List<Post> posts = api1.getPosts() + api2.getPosts();
 }

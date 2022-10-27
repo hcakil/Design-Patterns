@@ -1,5 +1,5 @@
-import 'package:design_patterns/factory/iphone_5s.dart';
-import 'package:design_patterns/factory/phone.dart';
+import 'package:design_patterns/creational_patterns/factory/iphone_5s.dart';
+import 'package:design_patterns/creational_patterns/factory/phone.dart';
 
 class IPhoneFactory {
   static Phone? getPhone(
