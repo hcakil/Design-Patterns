@@ -195,3 +195,31 @@ Cons
 + Facade defines a new interface for existing objects, whereas Adapter tries to make the existing interface usable. Adapter usually wraps just one object, while Facade works with an entire subsystem of objects.
 
 + Bridge, State, Strategy (and to some degree Adapter) have very similar structures. Indeed, all of these patterns are based on composition, which is delegating work to other objects. However, they all solve different problems. A pattern isn’t just a recipe for structuring your code in a specific way. It can also communicate to other developers the problem the pattern solves.
+
+
+# Bridge
+
+Link [https://refactoring.guru/design-patterns/bridge]
+
+# Pros and Cons
+
+Pros
+
++ You can create platform-independent classes and apps.
++ The client code works with high-level abstractions. It isn’t exposed to the platform details.
++ Open/Closed Principle. You can introduce new abstractions and implementations independently from each other.
++ Single Responsibility Principle. You can focus on high-level logic in the abstraction and on platform details in the implementation.
+
+Cons
+
++ You might make the code more complicated by applying the pattern to a highly cohesive class.
+
+## Relations with Other Patterns
+
++ Bridge is usually designed up-front, letting you develop parts of an application independently of each other. On the other hand, Adapter is commonly used with an existing app to make some otherwise-incompatible classes work together nicely.
+
++ Bridge, State, Strategy (and to some degree Adapter) have very similar structures. Indeed, all of these patterns are based on composition, which is delegating work to other objects. However, they all solve different problems. A pattern isn’t just a recipe for structuring your code in a specific way. It can also communicate to other developers the problem the pattern solves.
+
++ You can use Abstract Factory along with Bridge. This pairing is useful when some abstractions defined by Bridge can only work with specific implementations. In this case, Abstract Factory can encapsulate these relations and hide the complexity from the client code.
+
++ You can combine Builder with Bridge: the director class plays the role of the abstraction, while different builders act as implementations.

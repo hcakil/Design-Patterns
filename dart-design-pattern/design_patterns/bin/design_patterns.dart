@@ -12,6 +12,8 @@ import 'package:design_patterns/creational_patterns/signleton/singleton.dart';
 import 'package:design_patterns/structural/adapter/adapters.dart';
 import 'package:design_patterns/structural/adapter/iposts_api.dart';
 import 'package:design_patterns/structural/adapter/post.dart';
+import 'package:design_patterns/structural/bridge/coffee_roaster.dart';
+import 'package:design_patterns/structural/bridge/loudspeaker.dart';
 
 void main(List<String> arguments) {
   // print('Hello world: ${design_patterns.calculate()}!');
@@ -99,4 +101,18 @@ void main(List<String> arguments) {
   final IPostsAPI api2 = Site2Adapter();
 
   final List<Post> posts = api1.getPosts() + api2.getPosts();
+  posts.forEach((element) {
+    print(element.content + " " + element.title);
+  });
+
+//Bridge
+//This is the main part for creating interfaces.
+
+  var roaster = CoffeeRoaster();
+  for (var i = 0; i < 3; i++) {
+    roaster.turnGasValve();
+    if (roaster.isTooHot) {
+      roaster.loudspeaker = LoudspeakerWithAlarm();
+    }
+  }
 }
